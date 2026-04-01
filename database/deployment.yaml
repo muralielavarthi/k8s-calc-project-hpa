@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-deployment
+  namespace: calc-namespace
+  labels:
+    app: database
+    project: calc
+    division: finance
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: database
+      project: calc
+      division: finance
+  template:
+    metadata:
+      labels:
+        app: database
+        project: calc
+        division: finance
+    spec:
+      containers:
+        - name: mysql
+          image: muralielavarthi/mysql:2.0.0
+          envFrom: # dynamic updates will not be reflected in running pods.
+            - configMapRef:
+                name: database-config
