@@ -25,11 +25,11 @@ spec:
         - name: frontend
           image: muralielavarthi/frontend:2.0.0
           resources:
-          requests: #soft limits
-            memory: "64Mi"
-            cpu: "250m"
-          limits: #hard limits
-            memory: "128Mi"
+            requests: #soft limits
+              memory: "64Mi"
+              cpu: "250m"
+            limits: #hard limits
+              memory: "128Mi"
             cpu: "500m"
           command: ["nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"] # override the default command to use our custom nginx.conf
           volumeMounts:
