@@ -4,4 +4,4 @@
 - Deployment
 - ConfigMap (nginx.conf)
 - Service (LoadBalancer, NodePort, ClusterIP)
-
+- Horizontal Pod Autoscaling (frontend service)
